@@ -1,0 +1,8 @@
+<waves>
+	<wave on="serviceinfo" >
+		<input on="com.waves.test.UserInfo" type="com.waves.test.HttpRequest2UserInfo" to="java.util.HashMap">
+			<stream wave="services/getAllServices" container="ApiServices" />
+		</input>
+<!-- 		<output path="com.waves.test.ServiceInfo2String"/> -->
+	</wave>
+</waves>

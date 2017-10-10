@@ -1,0 +1,8 @@
+<component path="assets/db/my_sql_connection.properties" type="database">
+	<interface type="table" on="dash_master">
+		<macro path="assets/sql/dashboard/dash_master_insert.sql" type="sql"
+			on="insert" />
+		<macro path="assets/sql/dashboard/dash_master_update.sql" type="sql"
+			on="update" />
+	</interface>
+</component>

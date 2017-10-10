@@ -1,0 +1,15 @@
+<component path="assets/html/template.html" type="html">
+	<interface type="jquery" on="index" to="domain_grid">
+		<macro path="assets/html/dashboard.html" type="html" to="page" />
+		<macro path="assets/html/menu.html" type="html" to="menu" />
+		<macro path="assets/html/header.html" type="html" to="header" />
+		<macro path="assets/html/footer.html" type="html" to="footer" />
+	</interface>
+	<interface type="button" on="refresh">
+		<macro path="assets/js/get_user_info.js" type="javascript" to="click" />
+	</interface>
+	<interface type="datatables" on="domain_grid">
+		<macro path="data" type="ajax" to="data" />
+	</interface>
+
+</component>

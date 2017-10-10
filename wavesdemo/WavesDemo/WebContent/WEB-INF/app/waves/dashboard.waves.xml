@@ -1,0 +1,14 @@
+<waves>
+	<wave on="index">
+		<input on="javax.servlet.http.HttpServletRequest" type="com.waves.test.HttpRequest2UserInfo"
+			to="com.waves.test.UserInfo" />
+	</wave>
+	<wave on="domain_grid" type="application/json">
+		<input on="javax.servlet.http.HttpServletRequest" type="com.waves.test.HttpRequest2UserInfo"
+			to="com.waves.test.UserInfo">
+			<stream wave="serviceinfo" container="ApiServices" />
+		</input>
+		<output on="java.util.List" type="com.waves.test.ServiceInfo2String"
+			to="java.lang.StringBuilder" />
+	</wave>
+</waves>

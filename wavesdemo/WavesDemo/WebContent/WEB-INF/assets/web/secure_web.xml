@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>OxygenWeb2</display-name>
+	<welcome-file-list>
+		<welcome-file>/assets/html/signin.html</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>JTA</param-name>
+		<param-value>java:jboss/UserTransaction</param-value>
+	</context-param>
+
+
+	<!-- <servlet> -->
+	<!-- <servlet-name>idp</servlet-name> -->
+	<!-- <servlet-class>org.picketlink.identity.federation.web.servlets.IDPServlet</servlet-class> -->
+	<!-- <init-param> -->
+	<!-- <param-name>SIGN_OUTGOING_MESSAGES</param-name> -->
+	<!-- <param-value>false</param-value> -->
+	<!-- </init-param> -->
+	<!-- <init-param> -->
+	<!-- <param-name>ROLE_GENERATOR</param-name> -->
+	<!-- <param-value>org.picketlink.identity.federation.web.roles.DefaultRoleGenerator</param-value> -->
+	<!-- </init-param> -->
+	<!-- <load-on-startup>1</load-on-startup> -->
+	<!-- </servlet> -->
+	<!-- <servlet-mapping> -->
+	<!-- <servlet-name>idp</servlet-name> -->
+	<!-- <url-pattern>/*/j_security_check</url-pattern> -->
+	<!-- </servlet-mapping> -->
+
+
+	<!-- <servlet> -->
+	<!-- <servlet-name>hydrides</servlet-name> -->
+	<!-- <servlet-class>com.hydrides.core.HydridesServlet</servlet-class> -->
+	<!-- <init-param> -->
+	<!-- <param-name>JTA</param-name> -->
+	<!-- <param-value>java:jboss/UserTransaction</param-value> -->
+	<!-- </init-param> -->
+	<!-- <load-on-startup>1</load-on-startup> -->
+	<!-- </servlet> -->
+	<!-- <servlet-mapping> -->
+	<!-- <servlet-name>hydrides</servlet-name> -->
+	<!-- <url-pattern>/dashboard/*</url-pattern> -->
+	<!-- </servlet-mapping> -->
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Images</web-resource-name>
+			<url-pattern>/static/img/*</url-pattern>
+		</web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>CSS</web-resource-name>
+			<url-pattern>/static/css/*</url-pattern>
+		</web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>CSS</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+	</security-constraint>
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>IDP</web-resource-name>
+			<url-pattern>/dashboard/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>manager</role-name>
+			<role-name>Sales</role-name>
+			<role-name>Employee</role-name>
+			<role-name>All</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>PicketLink IDP Application</realm-name>
+		<form-login-config>
+			<form-login-page>/static/signin.html</form-login-page>
+			<form-error-page>/static/signin3.html</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<security-role>
+		<role-name>manager</role-name>
+	</security-role>
+	<security-role>
+		<role-name>Sales</role-name>
+	</security-role>
+	<security-role>
+		<role-name>Employee</role-name>
+	</security-role>
+	<security-role>
+		<description>The role that is required to log in to the IDP Application</description>
+		<role-name>All</role-name>
+	</security-role>
+
+</web-app>

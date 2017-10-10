@@ -1,0 +1,13 @@
+<waves>
+	<wave on="dash_master/insert">
+		<input path="com.waves.test.Request2Map" to="java.util.HashMap"
+			on="javax.servlet.http.HttpServletRequest">
+			<stream wave="getAllServices" container="ApiServices" />
+			<!-- <stream wave="monitor" /> -->
+		</input>
+		<output path="com.waves.test.ServiceInfo2String" to="java.lang.StringBuilder"
+			on="java.util.List" type="application/json" />
+	</wave>
+
+
+</waves>

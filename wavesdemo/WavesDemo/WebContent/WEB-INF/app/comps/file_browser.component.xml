@@ -1,0 +1,7 @@
+<component path="app" type="directory">
+	<interface type="files" on="comps" />
+	<interface type="files" on="domains">
+		<macro path="*.xml" type="pattern" to="xml" />
+	</interface>
+	<interface type="files" on="waves" />
+</component>

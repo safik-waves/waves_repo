@@ -1,0 +1,5 @@
+<component type="java">
+	<interface type="java" on="serviceinfo">
+		<macro path="com.waves.test.UserService" type="method" to="getAllServices" />
+	</interface>
+</component>

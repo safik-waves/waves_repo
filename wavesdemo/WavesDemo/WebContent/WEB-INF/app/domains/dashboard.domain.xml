@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain title="Dashboard Monitoring">
+	<container name="OxygenWeb2" host="127.0.0.1" port="9001"
+		path="assets/web/secure_web.xml" type="web" timeout="6000">
+		<waves path="app/waves/dashboard">
+			<component path="app/comps/dashboard" />
+		</waves>
+	</container>
+	<container name="DataService" host="127.0.0.1" port="9002"
+		 type="http" timeout="6000">
+		<waves path="app/waves/dataservice">
+			<component path="app/comps/dataservice" />
+		</waves>
+	</container>
+	<container name="ApiServices" host="127.0.0.1" port="9003"
+		type="java" timeout="6000">
+		<waves path="app/waves/user_service">
+			<component path="app/comps/user_services" />
+		</waves>
+	</container>
+
+<!-- 	<container name="DashboardDatabase" host="192.168.1.7" port="9012" -->
+<!-- 		path="assets/db/db_global.properties" type="database" timeout="6000"> -->
+<!-- 		<waves path="app/waves/dashboard_db"> -->
+<!-- 			<component path="app/comps/dashboard_db" /> -->
+<!-- 		</waves> -->
+<!-- 	</container> --> 
+	<container name="FileLookup" host="127.0.0.1" port="9005"
+		path="C:/Users/smdsa/git/waves/wavesdemo/WavesDemo/WebContent/WEB-INF"
+		type="FileSystem" timeout="6000">
+		<waves path="app/waves/file_info">
+			<component path="app/comps/file_browser" />
+		</waves>
+	</container>
+</domain>

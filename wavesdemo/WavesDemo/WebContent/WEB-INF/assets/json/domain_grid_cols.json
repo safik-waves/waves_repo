@@ -1,0 +1,29 @@
+columns : [
+		{
+			'data' : '0'
+		},
+		{
+			'data' : '1'
+		},
+		{
+			'data' : '2'
+		},
+		{
+			'data' : '3'
+		},
+		{
+			'data' : '4'
+		},
+		{
+			'data' : '5'
+		},
+		{
+			sortable : false,
+			"render" : function(data, type, full, meta) {
+				var buttonID = "rollover_" + full.id;
+				if (full[3] == 'STARTED' || full[3] == 'RUNNING')
+					return "<button class='btn btn-primary' name='start' disabled onclick='App.stop(this);' >Start</button>&nbsp;<button class='btn btn-primary' name='stop' onclick='App.stop(this);' >Stop</button>&nbsp;<button class='btn btn-primary' name='restart' onclick='App.restart(this);' >Restart</button>&nbsp;<button class='btn btn-primary' name='open' onclick='App.open(this);' >Open</button>";
+				else if(full[3] == 'STOPPED')
+					return "<button class='btn btn-primary' name='start' onclick='App.stop(this);' >Start</button>&nbsp;<button class='btn btn-primary' name='stop' disabled onclick='App.stop(this);' >Stop</button>&nbsp;<button class='btn btn-primary' name='restart' onclick='App.restart(this);' >Restart</button>&nbsp;<button class='btn btn-primary' name='open' onclick='App.open(this);' >Open</button>";
+				}
+		} ]

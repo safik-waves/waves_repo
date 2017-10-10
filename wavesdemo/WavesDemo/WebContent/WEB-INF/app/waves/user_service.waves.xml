@@ -1,0 +1,11 @@
+<waves>
+	<wave on="serviceinfo">
+		<input type="com.waves.test.UserInfo2Map" on="com.waves.test.UserInfo"
+			to="java.util.HashMap">
+			<stream wave="domains" container="FileLookup" />
+
+		</input>
+		<output on="java.util.List" />
+	</wave>
+
+</waves>

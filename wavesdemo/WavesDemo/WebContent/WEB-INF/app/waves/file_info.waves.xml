@@ -1,0 +1,7 @@
+<waves>
+
+	<wave on="domains">
+		<output to="java.util.ArrayList" on="java.util.Map"/>
+	</wave>
+
+</waves>

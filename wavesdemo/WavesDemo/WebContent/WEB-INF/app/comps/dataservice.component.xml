@@ -1,0 +1,3 @@
+<component type="http">
+	<interface type="post" on="serviceinfo" />
+</component>

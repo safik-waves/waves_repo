@@ -1,0 +1,19 @@
+[
+		
+		
+		
+		#foreach($rec in $record)
+  		[ 
+  			"$rec.get("domain")",
+  			"$rec.get("title")",
+  			"$rec.get("port")",
+  			"$rec.get("state")",
+  			"$rec.get("size")",
+  			"$rec.get("traffic")",
+  			"$rec.get("domain")"
+  		]
+  		#if($foreach.count < $record.size()),#end
+  		#end
+  		
+   		
+ ]	 

@@ -1,0 +1,10 @@
+<component path="html/static.html"  waves="models/waves/userinfo">
+	<interface type="jquery" on="login">
+		<macro path="html/loginbar.html" type="html" on="header" />
+		<macro path="html/footer.html" type="html" on="footer" />
+		<macro path="html/page.html" type="html" on="page" />
+	</interface>
+	<interface type="button" on="signin">
+		<macro path="macros/common/submit_user_info.js" type="function" on="click" />
+	</interface>
+</component>
