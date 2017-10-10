@@ -1,0 +1,12 @@
+ process = $.ajax({ type: "POST", 
+ contentType:"text/html",
+ url:"$contextpath/$interface.on/$macro.to", 
+ data:JSON.stringify(data),
+success:function(data2) { 
+	$('#$macro.to').html($(data2).html());
+	
+}, 
+error: function(e) { 
+alert('Error on interface[$interface.type:$interface.on]:macro[$macro.type:$macro.to] : '+e);
+} 
+});

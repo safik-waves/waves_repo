@@ -1,0 +1,18 @@
+
+process = $.ajax({ type: "POST", 
+ 	url:"$contextpath/$interface.on", 
+ 	data:JSON.stringify(data),
+ 	timeout:10000,
+    success:function(jsonData) { 
+	App.log('json data path ( $macro.path ): '+JSON.stringify(jsonData));
+	App.log(jsonData['$macro.path']);
+	
+	$('#$interface.on').DataTable( {
+	 "data": jsonData['$macro.path'],
+   	 "bDestroy":true
+	} );
+    }, 
+    error: function(e) { 
+	alert('Error on interface[$interface.type:$interface.on]:macro[$macro.type:$macro.to] : '+e);
+   } 
+});

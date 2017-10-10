@@ -1,0 +1,6 @@
+$('#$interface.on').DataTable( {
+	 "sAjaxSource": "$contextpath/$interface.on",
+   	 "sAjaxDataProp": "$macro.path",
+   	 "bProcessing": true,
+	 "bDestroy":true
+} );

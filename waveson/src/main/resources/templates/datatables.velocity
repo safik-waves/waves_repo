@@ -1,0 +1,8 @@
+ $('#$interface.on').DataTable( {
+        "processing": true,
+        "serverSide": true,
+        "ajax": "$contextpath/$interface.on/$macro.on",
+        bDestroy: true
+    } );
+		
+		

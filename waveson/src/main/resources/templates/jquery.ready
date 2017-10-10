@@ -1,0 +1,26 @@
+
+
+var path = window.location.pathname;	  
+var queryString = window.location.href;
+
+if(queryString.indexOf('?') > -1){
+    queryString = queryString.split('?')[1];
+  }
+  var pairs = queryString.split('&');
+  var data = {};
+  pairs.forEach(function(pair) {
+    pair = pair.split('=');
+    data[pair[0]] = decodeURIComponent(pair[1] || '');
+  });	
+  
+#foreach($p in $paths.keySet())
+  #set($i=  $paths.get($p))
+     if(path == '$p'){ 
+      #set( $o = $i.on )
+      #set( $t = $i.to )	
+    	//  $.when(App.$o(data)).done(App.$t(data));
+   	 App.$o(data);
+     }	
+#end	  
+
+  
